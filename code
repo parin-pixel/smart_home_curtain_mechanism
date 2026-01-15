@@ -1,0 +1,30 @@
+#include <Stepper.h>
+int stepsperrev=2048;
+int motspeed=10;
+Stepper mystepper(stepsperrev,8,10,9,11);
+int ldrpin=A0;
+int ldrval;
+bool isopen=false;
+void setup() {
+  // put your setup code here, to run once:
+Serial.begin(9600);
+pinMode(ldrpin, INPUT);
+mystepper.setSpeed(motspeed);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+ldrval=analogRead(ldrpin);
+Serial.println(ldrval);
+
+if (ldrval<900 && !isopen){
+  mystepper.step(-stepsperrev/2);
+  isopen=true;
+}
+else if (ldrval>=900 && isopen){
+  mystepper.step(stepsperrev/2);
+  isopen=false;
+}
+
+delay(200);
+}

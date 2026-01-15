@@ -1,0 +1,14 @@
+A photoresistor which detects light intensity and shows values from range 0 to 1023. When light is above a threshhold intensity , stepper motor rotates. The rotation of 
+stepper motor can be considered as curtain actuation.
+
+components used - photoresistor(ldr) , stepper motor , resistor , breadboard , arduino(microcontroller), ULN2003 (stepper motor driver), breadboard power supply.
+
+working of photoresistor - it is a resistor whose value changes when light falls on it. electrons in valence band get energized when light of centain frequency falls on it. Hence, it
+is free from bound of nucleus and now can conduct electricity. thus resistance drops when light intensity increases.
+
+working of stepper motor - It works on principle of electromagnetic induction. It is used for precision in angles . The rotation of stepper motors is by taking steps . the stepper
+motor used in this project takes 2048 steps to complete 1 revolution. It is driven by the stepper driver. the rotor of stepper has 50 teeth and stator has 48 teeth. A 2 phase 
+current is passed through the coils and the motors starts to step.
+
+It is coded in such a way that when ldr reads a value above a certain theshhold , the curtain opens ( motor rotates ) and below a certain value it closes.
+the rotation of motor represents curtain actuation.
